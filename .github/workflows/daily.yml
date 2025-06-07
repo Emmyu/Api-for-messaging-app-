@@ -1,0 +1,26 @@
+name: Auto Daily Commit
+
+on:
+  schedule:
+    - cron: '0 10 * * *' # Runs every day at 10 AM UTC
+  workflow_dispatch:
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Make a change
+        run: |
+          echo "// Daily ping at $(date)" >> heartbeat.txt
+
+      - name: Commit and Push
+        run: |
+          git config --global user.email "emmyunng@gmail.com"
+          git config --global user.name "Emmy"
+          git add .
+          git commit -m "💚 Auto heartbeat $(date)"
+          git push
