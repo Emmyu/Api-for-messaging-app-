@@ -65,11 +65,3 @@ The server will run at [http://localhost:3000](http://localhost:3000).
   Get messages for the logged-in user.  
   **Headers:** `Authorization: Bearer <token>`
 
-## Notes
-
-- **Never commit your `.env` file to version control.**
-- Make sure your MongoDB Atlas user has the correct permissions.
-
----
-
-**Feel free to contribute or open issues!**
