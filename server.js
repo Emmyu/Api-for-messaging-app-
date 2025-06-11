@@ -21,3 +21,4 @@ mongoose.connect(process.env.MONGO_URI_ATLAS)
     app.listen(3000, () => console.log('🚀 Server running at http://localhost:3000'));
   })
   .catch(err => console.error('❌ Mongo Error:', err));
+
